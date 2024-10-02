@@ -1,0 +1,111 @@
+/* Container utama untuk bagian Interest */
+.interest-container {
+  padding: 40px 20px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* Judul bagian Interest */
+.interest-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  padding: 25px 0px;
+  color: #333;
+  position: relative;
+}
+
+/* Garis bawah judul */
+.interest-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid layout untuk daftar minat */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Setiap kartu minat */
+.interest-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Efek hover pada kartu minat */
+.interest-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Ikon minat */
+.interest-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* Judul minat */
+.interest-title-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Deskripsi minat */
+.interest-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Animasi AOS (Animate On Scroll) */
+@import 'aos/dist/aos.css';
+
+/* Styling Responsif */
+@media (max-width: 768px) {
+  .interest-container {
+    padding: 30px 15px;
+  }
+
+  .interest-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .interest-card {
+    padding: 15px 20px;
+  }
+
+  .interest-icon {
+    font-size: 2rem;
+  }
+
+  .interest-title-text {
+    font-size: 1.25rem;
+  }
+
+  .interest-description {
+    font-size: 0.95rem;
+  }
+}

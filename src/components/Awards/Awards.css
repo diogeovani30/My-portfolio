@@ -1,0 +1,130 @@
+/* Container utama untuk bagian Awards */
+.awards-container {
+  padding: 40px 20px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* Judul bagian Awards */
+.awards-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  padding: 25px 0px;
+  color: #333;
+  position: relative;
+}
+
+/* Garis bawah judul */
+.awards-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid layout untuk daftar penghargaan */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Setiap kartu penghargaan */
+.awards-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Efek hover pada kartu penghargaan */
+.awards-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Ikon penghargaan */
+.awards-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* Judul penghargaan */
+.awards-title-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Pemberi penghargaan */
+.awards-issuer {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Tanggal penghargaan */
+.awards-date {
+  display: inline-block;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Deskripsi penghargaan */
+.awards-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Animasi AOS (Animate On Scroll) */
+@import 'aos/dist/aos.css';
+
+/* Styling Responsif */
+@media (max-width: 768px) {
+  .awards-container {
+    padding: 30px 15px;
+  }
+
+  .awards-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .awards-card {
+    padding: 15px 20px;
+  }
+
+  .awards-icon {
+    font-size: 2rem;
+  }
+
+  .awards-title-text {
+    font-size: 1.25rem;
+  }
+
+  .awards-issuer {
+    font-size: 1.1rem;
+  }
+
+  .awards-description {
+    font-size: 0.95rem;
+  }
+}

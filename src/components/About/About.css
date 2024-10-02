@@ -1,0 +1,129 @@
+/* src/components/About/About.css */
+
+.about-container {
+  padding: 40px 20px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  padding: 25px;
+  color: #333;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #007bff;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.about-intro {
+  flex: 1;
+}
+
+.about-intro h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-intro p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+.about-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-intro p {
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+}

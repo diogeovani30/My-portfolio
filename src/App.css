@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #646cff;
+  --background-dark: #0C0A0A;
+  --background-light: #ffffff;
+  --text-light: #f1f1f1;
+  --text-dark: #242424;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-image: url('./assets/bg.jpg');
+  background-size: 115%;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.home-section {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.about-section,
+.education-section,
+.experience-section,
+.skill-section,
+.interest-section,
+.awards-section {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+/* CSS untuk Education dan Skill */
+.education-container,
+.skill-container {
+  min-height: 100vh; /* Pastikan ini diatur dengan benar */
+  padding: 40px 20px; /* Tambahkan padding jika diperlukan */
+}
+
+.education-grid,
+.skill-grid {
+  display: grid; /* Pastikan ini sesuai dengan tata letak yang diinginkan */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px; /* Atur lebar maksimum jika diperlukan */
+  margin: 0 auto; /* Pusatkan grid */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .education-container,
+  .skill-container {
+    padding: 50px 15px; /* Sesuaikan padding untuk perangkat kecil */
+  }
+
+  .education-title,
+  .skill-title {
+    font-size: 2rem;
+  }
+}

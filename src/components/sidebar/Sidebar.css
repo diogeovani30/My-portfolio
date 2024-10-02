@@ -1,0 +1,147 @@
+/* Variabel CSS untuk konsistensi warna */
+:root {
+  --sidebar-bg: #1e1e1e;
+  --sidebar-text: #ffffff;
+  --sidebar-hover-bg: #333333;
+  --sidebar-active-bg: #646cff;
+  --sidebar-active-text: #ffffff;
+  --toggle-color: #ffffff;
+  --toggle-bg: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed;
+
+  left: 0;
+  width: 250px;
+  height: calc(100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--sidebar-bg);
+  padding-top: 20px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-logo {
+  color: var(--sidebar-text);
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.sidebar-logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin: 15px 0;
+}
+
+.sidebar-link {
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--sidebar-active-text);
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 15px; /* Sesuaikan dengan tinggi Navbar */
+  left: 15px;
+  font-size: 24px;
+  color: var(--toggle-color);
+  background-color: var(--toggle-bg);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1100;
+  display: none; /* Disembunyikan di desktop secara default */
+  transition: background-color 0.3s;
+}
+
+.sidebar-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Overlay saat Sidebar terbuka di Mobile */
+.sidebar.open::before {
+  content: '';
+  position: fixed;
+  top: 60px; /* Sesuaikan dengan tinggi Navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    top: 60px; /* Sesuaikan jika tinggi Navbar berubah */
+    height: calc(100% - 60px);
+  }
+
+  main {
+    margin-left: 0; /* Hapus margin di layar kecil */
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .sidebar-toggle {
+    display: none; /* Sembunyikan tombol toggle di desktop */
+  }
+
+  main {
+    margin-left: 250px; /* Sesuaikan jika lebar Sidebar berubah */
+  }
+}
